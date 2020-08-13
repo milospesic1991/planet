@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5cbbb01c-eba8-4bfd-95ac-4a6270342da1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="development" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1egA997eBl4E4BHGDVL1tYebK0U" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="Tests (eryce-frontend-test)" type="JavaScriptTestRunnerKarma">
+      <config-file value="$PROJECT_DIR$/karma.conf.js" />
+      <working-directory value="$PROJECT_DIR$" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="E2E Tests (eryce-frontend-test)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5cbbb01c-eba8-4bfd-95ac-4a6270342da1" name="Default Changelist" comment="" />
+      <created>1594732707421</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594732707421</updated>
+      <workItem from="1594732709212" duration="1132000" />
+      <workItem from="1595329605785" duration="8553000" />
+      <workItem from="1595343792725" duration="632000" />
+    </task>
+    <task id="LOCAL-00001" summary="Readme md file chnaged">
+      <created>1595341685750</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1595341685750</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Readme md file changed">
+      <created>1595342976664</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1595342976664</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Readme md file changed">
+      <created>1595343094372</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1595343094372</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Readme md file changed">
+      <created>1595343214302</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1595343214302</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Readme md file changed">
+      <created>1595343293347</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1595343293347</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Deleted files">
+      <created>1595343968664</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1595343968664</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Get planets initiated">
+      <created>1595344354045</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1595344354045</updated>
+    </task>
+    <task id="LOCAL-00008" summary="readme file modified">
+      <created>1596617138872</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1596617138872</updated>
+    </task>
+    <task id="LOCAL-00009" summary="readme file modified">
+      <created>1596617226781</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1596617226781</updated>
+    </task>
+    <task id="LOCAL-00010" summary="readme file modified">
+      <created>1596617433654</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1596617433654</updated>
+    </task>
+    <task id="LOCAL-00011" summary="readme file modified">
+      <created>1596617527023</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1596617527023</updated>
+    </task>
+    <task id="LOCAL-00012" summary="readme file modified">
+      <created>1596617577489</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1596617577489</updated>
+    </task>
+    <task id="LOCAL-00013" summary="initial commit">
+      <created>1597133667272</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1597133667272</updated>
+    </task>
+    <task id="LOCAL-00014" summary="initial commit">
+      <created>1597134112390</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1597134112390</updated>
+    </task>
+    <task id="LOCAL-00015" summary="readme modified and favicon changed">
+      <created>1597134438029</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1597134438030</updated>
+    </task>
+    <task id="LOCAL-00016" summary="browser prefixes added">
+      <created>1597134818200</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1597134818200</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Readme md file chnaged" />
+    <MESSAGE value="Readme md file changed" />
+    <MESSAGE value="Deleted files" />
+    <MESSAGE value="Get planets initiated" />
+    <MESSAGE value="readme file modified" />
+    <MESSAGE value="initial commit" />
+    <MESSAGE value="readme modified and favicon changed" />
+    <MESSAGE value="browser prefixes added" />
+    <option name="LAST_COMMIT_MESSAGE" value="browser prefixes added" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2613" y="289" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1597134042475">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2613" y="289" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1597134042475" />
+    <state x="2419" y="21" width="912" height="1045" key="CommitChangelistDialog2" timestamp="1597134818152">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2419" y="21" width="912" height="1045" key="CommitChangelistDialog2/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1597134818152" />
+    <state x="2020" y="100" width="1720" height="880" key="DiffContextDialog" timestamp="1595338655195">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2020" y="100" width="1720" height="880" key="DiffContextDialog/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1595338655195" />
+    <state x="2514" y="313" width="722" height="460" key="EditFileWatcherDialog" timestamp="1594732908548">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2514" y="313" width="722" height="460" key="EditFileWatcherDialog/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1594732908548" />
+    <state x="2663" y="298" width="424" height="491" key="FileChooserDialogImpl" timestamp="1595337122375">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2663" y="298" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1595337122375" />
+    <state x="2131" y="108" width="1478" height="879" key="MergeDialog" timestamp="1596617348068">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2131" y="108" width="1478" height="879" key="MergeDialog/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596617348068" />
+    <state x="2512" y="295" width="726" height="497" key="MultipleFileMergeDialog" timestamp="1596617348074">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2512" y="295" width="726" height="497" key="MultipleFileMergeDialog/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1596617348074" />
+    <state x="2607" y="161" width="535" height="765" key="RollbackChangesDialog" timestamp="1597131260636">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2607" y="161" width="535" height="765" key="RollbackChangesDialog/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1597131260636" />
+    <state x="2475" y="272" width="800" height="543" key="Vcs.Push.Dialog.v2" timestamp="1597134834023">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2475" y="272" width="800" height="543" key="Vcs.Push.Dialog.v2/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1597134834023" />
+    <state x="2572" y="124" width="616" height="831" key="find.popup" timestamp="1597134197892">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2572" y="124" width="616" height="831" key="find.popup/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1597134197892" />
+    <state x="2546" y="315" width="658" height="491" key="git4idea.merge.GitPullDialog" timestamp="1595344358894">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2546" y="315" width="658" height="491" key="git4idea.merge.GitPullDialog/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1595344358894" />
+    <state x="2544" y="245" key="run.anything.popup" timestamp="1595344159736">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2544" y="245" key="run.anything.popup/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1595344159736" />
+    <state x="2543" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1594733213135">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2543" y="239" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1594733213135" />
+  </component>
+</project>
