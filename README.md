@@ -7,8 +7,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 #### To run client and api together
 
 - Open the terminal
-- npm install inside planets-api folder
-- npm install inside client folder
+- `npm install` inside _planets-api_ folder
+- `npm install` inside _client_ folder
 - Run `./run-app.sh`
 
 #### Table of API's
