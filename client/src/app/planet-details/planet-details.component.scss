@@ -1,0 +1,51 @@
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+
+  .main-title {
+    font-weight: 800;
+    width: 60%;
+  }
+
+  .action-wrapper {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.planet-container {
+  display: flex;
+  margin: 1rem;
+
+  .planet-img-desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 60%;
+
+    img {
+      width: 15vw;
+    }
+
+    div {
+      margin-left: 2rem;
+    }
+  }
+
+  .planet-info {
+    // display: flex;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 40%;
+
+    .info {
+      background-color: white;
+      // width: 50%;
+    }
+  }
+}

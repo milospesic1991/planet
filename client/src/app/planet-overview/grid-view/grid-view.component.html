@@ -1,0 +1,33 @@
+<div class="planet-view" [routerLink]="['/planet-details/', planet.id]">
+    <img class="img-holder" src="{{planet.imageUrl}}" alt="">
+    <h2 class="planet-name">{{planet.planetName}}</h2>
+    <p class="planet-description">{{planet.description}}</p>
+    <div class="planet-info">
+        <div class="info-wrapper">
+            <ng-container *ngTemplateOutlet="TextAndValue; context: {value: planet.planetColor, text: 'Color'}">
+            </ng-container>
+        </div>
+        <div class="info-wrapper">
+            <ng-container
+                *ngTemplateOutlet="TextAndValue; context: {value: planet.distInMillionsKM?.fromSun, text: 'Dist. from Sun'}">
+            </ng-container>
+        </div>
+    </div>
+    <div class="planet-info">
+        <div class="info-wrapper">
+            <ng-container
+                *ngTemplateOutlet="TextAndValue; context: {value: planet.planetRadiusKM, text: 'Radius in km'}">
+            </ng-container>
+        </div>
+        <div class="info-wrapper">
+            <ng-container
+                *ngTemplateOutlet="TextAndValue; context: {value: planet.distInMillionsKM?.fromEarth, text: 'Dist. from Earth'}">
+            </ng-container>
+        </div>
+    </div>
+</div>
+
+<ng-template #TextAndValue let-value="value" let-text="text">
+    <div class="info-value">{{value}}</div>
+    <div class="info-text">{{text}}</div>
+</ng-template>

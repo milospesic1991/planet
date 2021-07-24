@@ -1,0 +1,32 @@
+@import "../../../../assets/scss/mixins";
+
+.modal-wrapper {
+  .form-container {
+    font-size: 12px;
+
+    .upload-image-wrapper {
+      @include flexbox(space-between, center);
+      margin-bottom: 10px;
+
+      .browse-btn {
+        @include button(100px, #949697, white, #585858);
+      }
+    }
+
+    .mat-form-field {
+      width: 100%;
+    }
+
+    .split-form {
+      display: flex;
+
+      .m-left {
+        margin-left: 15px;
+      }
+    }
+
+    .field-margin-bottom {
+      margin-bottom: 10px;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@import "../../../assets/scss/variables";
+
+.table-view {
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.planet-description {
+  color: green;
+}
+
+.mat-column-planet-name {
+  width: 350px;
+
+  .planet-name {
+    font-size: 18px;
+  }
+  .planet-description {
+    color: $font-second;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 250px;
+  }
+}

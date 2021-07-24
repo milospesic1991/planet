@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~ngx-toastr/toastr";
+// @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+
+@import "assets/scss/variables.scss";
+@import "assets/scss/mixins.scss";
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  letter-spacing: 1px;
+  font-family: $font-family;
+  background-color: $body-background;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.mat-form-field-wrapper {
+  padding-bottom: 0;
+}
+
+.mat-form-field-outline-start,
+.mat-form-field-outline-end {
+  border-radius: 0 !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: #5e78b8 !important;
+}
+
+.button-wrapper {
+  @include flexbox(center, center);
+
+  .confirm-btn {
+    @include button(100px, #125169, white, #042836);
+  }
+
+  .cancel-btn {
+    @include button(100px, white, black, #a0a0a0);
+  }
+}

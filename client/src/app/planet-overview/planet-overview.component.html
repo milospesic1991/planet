@@ -1,0 +1,29 @@
+<header class="header-wrapper">
+    <h1 class="header-title">Planets</h1>
+    <div class="header-actions">
+        <div class="toggle-container">
+            <mat-icon [ngClass]="{'active': currentView == 'grid'}" class="toggle-btn" (click)="toggleView('grid')">
+                view_module</mat-icon>
+            <mat-icon [ngClass]="{'active': currentView == 'table'}" class="toggle-btn" (click)="toggleView('table')">
+                view_list</mat-icon>
+        </div>
+        <mat-form-field class="search-field" appearance="outline">
+            <mat-label>Search</mat-label>
+            <input matInput autocomplete="off" (keyup)="applyFilter($event)">
+        </mat-form-field>
+        <button class="create-btn" mat-raised-button (click)="createPlanet()">Create</button>
+    </div>
+</header>
+<ng-container *ngIf="currentView =='grid'">
+    <div class="grid-view-wrapper">
+        <ng-container *ngFor=" let planet of planetsList">
+            <app-grid-view style="width: 25%;" [planet]="planet"></app-grid-view>
+        </ng-container>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="currentView == 'table'">
+    <div style="position: relative; top: 100px;">
+        <app-table-view [dataSource]="dataSource"></app-table-view>
+    </div>
+</ng-container>

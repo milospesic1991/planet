@@ -1,0 +1,51 @@
+<header class="nav-wrapper">
+    <h1 class="main-title">{{planet?.planetName}}</h1>
+    <div class="action-wrapper">
+        <button mat-raised-button color="primary" (click)="editPlanet(planet)">Edit</button>
+        <button mat-raised-button style="margin-left: 20px;" color="warn" (click)="deletePlanet(planet)">Delete</button>
+    </div>
+</header>
+
+<div class="planet-container">
+    <div class="planet-img-desc">
+        <img src="{{planet?.imageUrl}}" alt="">
+        <div>
+            <h3>{{planet?.planetName}}</h3>
+            <p>{{planet?.description}}</p>
+        </div>
+    </div>
+
+    <div class="planet-info">
+        <div class="info">
+            <ng-container
+                *ngTemplateOutlet="TextAndValue; context: {value: planet?.planetRadiusKM, text: 'Radius in km'}">
+            </ng-container>
+
+        </div>
+
+        <div class="info">
+            <ng-container
+                *ngTemplateOutlet="TextAndValue; context: {value: planet?.distInMillionsKM?.fromSun, text: 'Dist. from Sun'}">
+            </ng-container>
+        </div>
+
+        <div class="info">
+            <ng-container *ngTemplateOutlet="TextAndValue; context: {value: planet?.planetColor, text: 'Color'}">
+            </ng-container>
+        </div>
+
+        <div class="info">
+            <ng-container
+                *ngTemplateOutlet="TextAndValue; context: {value: planet?.distInMillionsKM.fromEarth, text: 'Dist. from Earth'}">
+            </ng-container>
+        </div>
+    </div>
+
+
+</div>
+
+
+<ng-template #TextAndValue let-value="value" let-text="text">
+    <div>{{value}}</div>
+    <span>{{text}}</span>
+</ng-template>

@@ -1,0 +1,12 @@
+<div class="confirm-modal">
+    <mat-dialog-content>
+        <mat-icon class="confirm-modal-icon">error_outline</mat-icon>
+        <h3 class="confirm-modal-title">{{title}}</h3>
+        <p class="confirm-modal-msg">{{message}} {{planet.planetName}}?</p>
+    </mat-dialog-content>
+    <mat-dialog-actions class="button-wrapper">
+        <button class="confirm-btn" mat-raised-button (click)="onConfirm()" type="button" mat-button
+            cdkFocusInitial>Confirm</button>
+        <button class="cancel-btn" mat-raised-button type="button" mat-button mat-dialog-close>Cancel</button>
+    </mat-dialog-actions>
+</div>

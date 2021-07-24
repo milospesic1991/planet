@@ -1,0 +1,51 @@
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+
+.header-wrapper {
+  @include flexbox(space-between, center);
+  background-color: $white-background;
+  padding: 1.4rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5803921568627451);
+
+  .header-title {
+    margin: 0;
+  }
+
+  .header-actions {
+    @include flexbox(space-between, center);
+
+    .toggle-container {
+      margin-right: 2rem;
+      .toggle-btn {
+        padding: 3px;
+        cursor: pointer;
+        color: $non-active-btn;
+      }
+      .active {
+        border-radius: 4px;
+        color: $active-btn-color;
+        background-color: $active-btn-bkg;
+      }
+    }
+
+    .search-field {
+      font-size: 10px;
+      margin-right: 2rem;
+    }
+
+    .create-btn {
+      margin-right: 2rem;
+      @include button(100px, #4c396f, white, #2e1f4b);
+    }
+  }
+}
+.grid-view-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  top: 95px;
+}

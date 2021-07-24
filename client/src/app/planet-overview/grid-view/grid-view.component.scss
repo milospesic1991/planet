@@ -1,0 +1,53 @@
+@import "../../../assets/scss/mixins";
+@import "../../../assets/scss/variables";
+
+.planet-view {
+  background-color: $white-background;
+  margin: 1rem;
+  height: 550px;
+  border-radius: 10px;
+  padding: 1rem;
+  @include flexbox(center, center);
+  flex-direction: column;
+  align-content: stretch;
+  cursor: pointer;
+
+  .img-holder {
+    height: 100px;
+    width: 100px;
+    text-align: center;
+  }
+
+  .planet-name {
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  .planet-description {
+    color: $font-second;
+    height: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .planet-info {
+    width: 100%;
+    @include flexbox(space-between, center);
+
+    .info-wrapper {
+      width: 50%;
+      @include flexbox(center, center);
+      flex-direction: column;
+      margin: 5px;
+
+      .info-value {
+        font-size: 20px;
+      }
+
+      .info-text {
+        color: $font-second;
+        font-size: 12px;
+      }
+    }
+  }
+}
