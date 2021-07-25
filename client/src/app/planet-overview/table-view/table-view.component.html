@@ -1,9 +1,9 @@
-<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 table-view">
+<table mat-table [dataSource]="dataSource" matSort (click)="tableSort()" class="mat-elevation-z8 table-view">
 
     <ng-container matColumnDef="image">
         <th mat-header-cell *matHeaderCellDef></th>
-        <td style="width: 130px;" mat-cell *matCellDef="let element"> <img style="height: 10vh;"
-                src="{{element.imageUrl}}" alt="{{element.planetName}}"> </td>
+        <td class="image-cell" mat-cell *matCellDef="let element"> <img style="height: 10vh;" src="{{element.imageUrl}}"
+                alt="{{element.planetName}}"> </td>
     </ng-container>
 
     <ng-container matColumnDef="planetName">
@@ -35,7 +35,7 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr style="cursor: pointer;" [routerLink]="['/planet-details/', row.id]" mat-row
+    <tr class="table-row" [routerLink]="['/planet-details/', row.id]" mat-row
         *matRowDef="let row; columns: displayedColumns;">
     </tr>
     <tr *matNoDataRow>

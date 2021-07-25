@@ -24,7 +24,7 @@
   }
 
   .planet-description {
-    color: $font-second;
+    color: $gray-font;
     height: 200px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -45,7 +45,7 @@
       }
 
       .info-text {
-        color: $font-second;
+        color: $gray-font;
         font-size: 12px;
       }
     }

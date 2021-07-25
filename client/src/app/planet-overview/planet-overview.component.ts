@@ -12,36 +12,30 @@ import { ModalComponent } from '../shared/components/modal/modal.component';
   styleUrls: ['./planet-overview.component.scss']
 })
 export class PlanetOverviewComponent implements OnInit {
-  planetsList: Planet[];
-
-  changeViewTab: boolean = false;
   currentView: string = 'grid';
 
+  planetsList: Planet[];
   dataSource: MatTableDataSource<Planet>;
-
   constList = [];
 
-  @ViewChild(MatSort) sort: MatSort;
-
-  constructor(private planetService: PlanetService,
+  constructor(
+    private planetService: PlanetService,
     private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getPlanets();
-    this.currentView = localStorage.getItem('currentView');
+    this.setDisplayView();
   }
 
   getPlanets = () => {
-    this.planetService.getPlanets().subscribe(data => {
-      this.planetsList = data;
+    this.planetService.getPlanets().subscribe(planets => {
+      this.planetsList = planets;
       this.constList = this.planetsList;
       this.dataSource = new MatTableDataSource(this.planetsList);
-      this.dataSource.filterPredicate = function (data, filter: string): boolean {
+      this.dataSource.filterPredicate = (data, filter: string): boolean => {
         return data.planetName.toLowerCase().includes(filter);
       };
-      this.dataSource.sort = this.sort;
     })
-
   }
 
   applyFilter(event: Event) {
@@ -50,7 +44,6 @@ export class PlanetOverviewComponent implements OnInit {
 
     this.dataSource.filter = filterValue.trim().toLowerCase();
     this.planetsList = filterList.filter(planet => planet.planetName.toLowerCase().includes(filterValue));
-
   }
 
   toggleView(view: string) {
@@ -63,22 +56,25 @@ export class PlanetOverviewComponent implements OnInit {
     }
   }
 
-
   createPlanet = () => {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = false;
     dialogConfig.width = '550px';
 
-    let dialogRef = this.dialog.open(ModalComponent, dialogConfig);
-    dialogRef.afterClosed().subscribe(res => {
-      if (!!res) {
-        this.planetsList.push(res);
+    // open modal and fetch data after modal is closed
+    let modalDialog = this.dialog.open(ModalComponent, dialogConfig);
+    modalDialog.afterClosed().subscribe(modalResult => {
+      if (!!modalResult) {
+        this.planetsList.push(modalResult);
         this.dataSource = new MatTableDataSource(this.planetsList);
-        this.dataSource.sort = this.sort;
       }
     });
+  }
+
+  private setDisplayView() {
+    let localStorageValue = localStorage.getItem('currentView');
+    this.currentView = !!localStorageValue ? localStorageValue : 'grid';
   }
 
 }

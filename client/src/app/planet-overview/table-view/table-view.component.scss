@@ -5,8 +5,8 @@
   margin: 1rem auto;
 }
 
-.planet-description {
-  color: green;
+.image-cell {
+  width: 130px;
 }
 
 .mat-column-planet-name {
@@ -16,10 +16,14 @@
     font-size: 18px;
   }
   .planet-description {
-    color: $font-second;
+    color: $gray-font;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 250px;
   }
+}
+
+.table-row {
+  cursor: pointer;
 }

@@ -13,13 +13,13 @@ const baseUrl = "http://localhost:3001/api/planets";
 export class PlanetService {
   constructor(private http: HttpClient, private toastr: ToastrService) { }
 
-  getPlanets = () => {
+  getPlanets = (): Observable<Array<Planet>> => {
     return this.http.get<Array<Planet>>(baseUrl).pipe(
       map(data => {
         if (!!data) {
-          let planets = new Array<Planet>();
-          data.forEach(planet => planets.push(new Planet(planet)));
-          return planets;
+          let planetList = new Array<Planet>();
+          data.forEach(planet => planetList.push(new Planet(planet)));
+          return planetList;
         } else {
           this.toastr.error('Something went wrong');
           return [];
@@ -31,8 +31,7 @@ export class PlanetService {
   getPlanet = (id: string): Observable<Planet> => {
     return this.http.get<Planet>(baseUrl + '/' + id).pipe(map(planet => {
       if (!!planet) {
-        let planetDetails = new Planet(planet);
-        return planetDetails;
+        return new Planet(planet);
       } else {
         return null;
       }
@@ -52,10 +51,10 @@ export class PlanetService {
   }
 
   updatePlanet = (planet: Planet): Observable<Planet> => {
-    return this.http.put<Planet>(baseUrl + '/' + planet.id, planet).pipe(map(res => {
-      if (!!res) {
+    return this.http.put<Planet>(baseUrl + '/' + planet.id, planet).pipe(map(planet => {
+      if (!!planet) {
         this.toastr.success('Planed edited');
-        return new Planet(res);
+        return new Planet(planet);
       } else {
         this.toastr.error('Something went wrong');
         return null;
@@ -64,11 +63,10 @@ export class PlanetService {
   }
 
   deletePlanet = (id: number): Observable<Planet> => {
-    return this.http.delete<Planet>(`${baseUrl}/${id}`).pipe(map(res => {
-      // return new Planet(res);
-      if (!!res) {
+    return this.http.delete<Planet>(`${baseUrl}/${id}`).pipe(map(planet => {
+      if (!!planet) {
         this.toastr.success('Successfully deleted');
-        return res;
+        return planet;
       } else {
         this.toastr.error('Something went wrong');
         return null;

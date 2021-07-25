@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Planet } from '../../models';
 import { ConfirmModalComponent } from '../confirm-modal/confirm-modal.component';
@@ -15,9 +15,11 @@ export class ModalComponent implements OnInit {
   planet: Planet;
   imageUrl: string;
 
-  constructor(private fb: FormBuilder, private planetService: PlanetService,
+  constructor(
+    private fb: FormBuilder,
+    private planetService: PlanetService,
     private dialog: MatDialog,
-    private dialogRef: MatDialogRef<ModalComponent>, @Inject(MAT_DIALOG_DATA) public planetData: Planet) {
+    private modalDialogRef: MatDialogRef<ModalComponent>, @Inject(MAT_DIALOG_DATA) public planetData: Planet) {
     this.planet = planetData;
   }
 
@@ -28,52 +30,32 @@ export class ModalComponent implements OnInit {
     }
   }
 
-  createDialog = (title: string, message: string) => {
-    let planet = new Planet(this.planetForm.value);
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-    dialogConfig.width = '400px';
-    dialogConfig.data = {
-      title: 'Confrim ' + title,
-      message: "Are you sure you want to " + message,
-      planet: planet
-    }
-
-    return dialogConfig;
-  }
-
-
   onConfirm = () => {
     let planet = new Planet(this.planetForm.value);
-    let dialogRef2;
+    let confirmModal;
     if (!!this.planet) {
-      dialogRef2 = this.dialog.open(ConfirmModalComponent, this.createDialog('editing', 'edit'));
+      confirmModal = this.dialog.open(ConfirmModalComponent, this.createDialog('editing', 'edit'));
     } else {
-      dialogRef2 = this.dialog.open(ConfirmModalComponent, this.createDialog('creating', 'create'));
+      confirmModal = this.dialog.open(ConfirmModalComponent, this.createDialog('creating', 'create'));
     }
-    dialogRef2.afterClosed().subscribe(res => {
-      if (res == 'confirm') {
+    confirmModal.afterClosed().subscribe((confirmModalResult: string) => {
+      if (confirmModalResult == 'confirm') {
         if (!!this.planet) {
           planet.id = this.planet.id;
           if (!!this.imageUrl) {
             planet.imageUrl = this.imageUrl;
           }
-          this.planetService.updatePlanet(planet).subscribe(res => {
-            this.dialogRef.close(res);
+          this.planetService.updatePlanet(planet).subscribe(planet => {
+            this.modalDialogRef.close(planet);
           })
         } else {
           planet.imageUrl = this.imageUrl;
-          this.planetService.createPlanet(planet).subscribe(res => {
-            this.dialogRef.close(res);
+          this.planetService.createPlanet(planet).subscribe(planet => {
+            this.modalDialogRef.close(planet);
           });
         }
       }
-
     })
-
-
   }
 
   onBrowse = (event) => {
@@ -85,12 +67,26 @@ export class ModalComponent implements OnInit {
       this.imageUrl = reader.result as string;
     }
     reader.readAsDataURL(file);
-
   }
 
-  createForm = () => {
+  private createDialog = (title: string, message: string): MatDialogConfig => {
+    let planet = new Planet(this.planetForm.value);
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.width = '400px';
+    dialogConfig.data = {
+      title: 'Confrim ' + title,
+      message: "Are you sure you want to " + message,
+      planet: planet
+    }
+
+    return dialogConfig;
+  }
+
+  private createForm = () => {
     this.planetForm = this.fb.group({
-      planetName: '',
+      planetName: ['', Validators.required],
       description: '',
       planetColor: '',
       planetRadiusKM: '',

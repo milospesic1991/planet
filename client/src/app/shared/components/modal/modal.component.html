@@ -1,57 +1,60 @@
 <div class="modal-wrapper">
+  <h3 mat-dialog-title>
     <h3 *ngIf="!planet">Create planet</h3>
     <h3 *ngIf="!!planet">Edit planet</h3>
-    <mat-dialog-content>
-        <form [formGroup]="planetForm" class="form-container">
-            <div class="upload-image-wrapper">
-                <img *ngIf="!!planet" style="height: 5vh;" src="{{planet.imageUrl}}" alt="">
-                <span *ngIf="!imageUrl">Photo</span>
-                <img style="height: 5vh;" *ngIf="imageUrl" [src]="imageUrl" alt="">
-                <input style="display: none;" type="file" accept="image/*" (change)="onBrowse($event)" #fileInput>
-                <button class="browse-btn" mat-raised-button type="button"
-                    (click)="fileInput.click()">Browse...</button>
-            </div>
-            <div class="field-margin-bottom">
-                <mat-form-field class="mat-form-field" appearance="outline">
-                    <mat-label>Name</mat-label>
-                    <input matInput formControlName="planetName" autocomplete="off" />
-                </mat-form-field>
-            </div>
+  </h3>
+  <mat-dialog-content>
+    <form [formGroup]="planetForm" class="form-container">
+      <div class="upload-image-wrapper">
+        <img *ngIf="!!planet" style="height: 5vh;" src="{{planet.imageUrl}}">
+        <span style="padding-left: 5px;" *ngIf="!planet">Photo</span>
+        <img style="height: 5vh;" *ngIf="imageUrl" [src]="imageUrl">
+        <input style="display: none;" type="file" accept="image/*" (change)="onBrowse($event)" #fileInput>
+        <button class="browse-btn" mat-raised-button type="button" (click)="fileInput.click()">Browse...</button>
+      </div>
 
-            <div class="field-margin-bottom">
-                <mat-form-field class="mat-form-field" appearance="outline">
-                    <mat-label>Description</mat-label>
-                    <textarea matInput cdkTextareaAutosize="true" formControlName="description"></textarea>
-                </mat-form-field>
-            </div>
+      <div class="field-margin-bottom">
+        <mat-form-field class="mat-form-field" appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="planetName" autocomplete="off" required />
+        </mat-form-field>
+      </div>
 
-            <div class="split-form field-margin-bottom">
-                <mat-form-field class="mat-form-field" appearance="outline">
-                    <mat-label>Radius in km</mat-label>
-                    <input matInput formControlName="planetRadiusKM" autocomplete="off" />
-                </mat-form-field>
+      <div class="field-margin-bottom">
+        <mat-form-field class="mat-form-field" appearance="outline">
+          <mat-label>Description</mat-label>
+          <textarea matInput cdkTextareaAutosize="true" formControlName="description"></textarea>
+        </mat-form-field>
+      </div>
 
-                <mat-form-field class="mat-form-field m-left" appearance="outline">
-                    <mat-label>Color</mat-label>
-                    <input matInput formControlName="planetColor" autocomplete="off" />
-                </mat-form-field>
-            </div>
+      <div class="split-form field-margin-bottom">
+        <mat-form-field class="mat-form-field" appearance="outline">
+          <mat-label>Radius in km</mat-label>
+          <input matInput formControlName="planetRadiusKM" autocomplete="off" />
+        </mat-form-field>
 
-            <div formGroupName="distInMillionsKM" class="split-form field-margin-bottom">
-                <mat-form-field class="mat-form-field" appearance="outline">
-                    <mat-label>Dist. from Sun</mat-label>
-                    <input matInput formControlName="fromSun" autocomplete="off" />
-                </mat-form-field>
+        <mat-form-field class="mat-form-field m-left" appearance="outline">
+          <mat-label>Color</mat-label>
+          <input matInput formControlName="planetColor" autocomplete="off" />
+        </mat-form-field>
+      </div>
 
-                <mat-form-field class="mat-form-field m-left" appearance="outline">
-                    <mat-label>Dist. from Earth</mat-label>
-                    <input matInput formControlName="fromEarth" autocomplete="off" />
-                </mat-form-field>
-            </div>
-        </form>
-    </mat-dialog-content>
-    <mat-dialog-actions class="button-wrapper">
-        <button class="confirm-btn" mat-raised-button type="button" (click)="onConfirm()" mat-button>Confirm</button>
-        <button class="cancel-btn" mat-raised-button type="button" mat-button mat-dialog-close>Cancel</button>
-    </mat-dialog-actions>
+      <div formGroupName="distInMillionsKM" class="split-form field-margin-bottom">
+        <mat-form-field class="mat-form-field" appearance="outline">
+          <mat-label>Dist. from Sun</mat-label>
+          <input matInput formControlName="fromSun" autocomplete="off" />
+        </mat-form-field>
+
+        <mat-form-field class="mat-form-field m-left" appearance="outline">
+          <mat-label>Dist. from Earth</mat-label>
+          <input matInput formControlName="fromEarth" autocomplete="off" />
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions class="button-wrapper">
+    <button class="confirm-btn" mat-raised-button type="button" [disabled]="planetForm.invalid" (click)="onConfirm()"
+      mat-button>Confirm</button>
+    <button class="cancel-btn" mat-raised-button type="button" mat-button mat-dialog-close>Cancel</button>
+  </mat-dialog-actions>
 </div>

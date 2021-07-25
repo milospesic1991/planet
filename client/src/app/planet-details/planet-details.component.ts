@@ -21,9 +21,6 @@ export class PlanetDetailsComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    debugger
-    this.planetId = this.route.snapshot.params.id;
-
     this.route.params.subscribe(params => {
       if (!!params) {
         this.planetId = params['id'];
@@ -44,7 +41,6 @@ export class PlanetDetailsComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = false;
     dialogConfig.width = '400px';
     dialogConfig.data = {
       title: 'Confrim deleting',
@@ -52,10 +48,11 @@ export class PlanetDetailsComponent implements OnInit {
       planet: planet
     }
 
-    let dialogRef = this.dialog.open(ConfirmModalComponent, dialogConfig);
+    // after confirming modal delete and get to overview
+    let confirmModal = this.dialog.open(ConfirmModalComponent, dialogConfig);
 
-    dialogRef.afterClosed().subscribe(res => {
-      if (res == 'confirm') {
+    confirmModal.afterClosed().subscribe(confirmModalResult => {
+      if (confirmModalResult == 'confirm') {
         this.planetService.deletePlanet(planet.id).subscribe(res => {
           this.router.navigate(['planets-overview']);
         })
@@ -68,11 +65,16 @@ export class PlanetDetailsComponent implements OnInit {
 
     dialogConfig.data = planet;
     dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = false;
     dialogConfig.width = '550px';
 
-    let dialogRef = this.dialog.open(ModalComponent, dialogConfig);
-    dialogRef.afterClosed().subscribe(res => this.router.navigate(['planets-overview']));
+    let modal = this.dialog.open(ModalComponent, dialogConfig);
+    modal.afterClosed().subscribe(planet => {
+      if (!!planet) {
+        this.planet = planet;
+      }
+      // this.router.navigate(['planets-overview'])
+    });
+
   }
 
 
