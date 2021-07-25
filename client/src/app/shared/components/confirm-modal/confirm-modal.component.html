@@ -2,7 +2,7 @@
   <mat-dialog-content>
     <mat-icon class="confirm-modal-icon">error_outline</mat-icon>
     <h3 class="confirm-modal-title">{{title}}</h3>
-    <p class="confirm-modal-msg">{{message}} <span style="font-weight: bold;">{{planet.planetName}}</span>?</p>
+    <p class="confirm-modal-msg">{{message}} <span class="name-bold">{{planet.planetName}}</span>?</p>
   </mat-dialog-content>
   <mat-dialog-actions class="button-wrapper">
     <button class="confirm-btn" mat-raised-button (click)="onConfirm()" type="button" mat-button

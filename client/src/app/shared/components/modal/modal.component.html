@@ -6,10 +6,10 @@
   <mat-dialog-content>
     <form [formGroup]="planetForm" class="form-container">
       <div class="upload-image-wrapper">
-        <img *ngIf="!!planet" style="height: 5vh;" src="{{planet.imageUrl}}">
-        <span style="padding-left: 5px;" *ngIf="!planet">Photo</span>
-        <img style="height: 5vh;" *ngIf="imageUrl" [src]="imageUrl">
-        <input style="display: none;" type="file" accept="image/*" (change)="onBrowse($event)" #fileInput>
+        <img *ngIf="!!planet && !imageUrl" class="img-size" src="{{planet.imageUrl}}">
+        <img class="img-size" *ngIf="!!imageUrl" [src]="imageUrl">
+        <span class="photo-field" *ngIf="!imageUploaded">Photo</span>
+        <input class="input-upload" type="file" accept="image/*" (change)="onBrowse($event)" #fileInput>
         <button class="browse-btn" mat-raised-button type="button" (click)="fileInput.click()">Browse...</button>
       </div>
 

@@ -44,10 +44,15 @@ body {
   @include flexbox(center, center);
 
   .confirm-btn {
-    @include button(100px, #125169, white, #042836);
+    @include button(
+      $btn-width,
+      $confirm-btn,
+      $white-primary,
+      $confirm-btn-hover
+    );
   }
 
   .cancel-btn {
-    @include button(100px, white, black, #a0a0a0);
+    @include button($btn-width, $white-primary, black, #a0a0a0);
   }
 }

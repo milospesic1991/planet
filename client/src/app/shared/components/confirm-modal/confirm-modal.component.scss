@@ -1,10 +1,12 @@
+@import "src/assets/scss/variables";
+
 .confirm-modal {
   text-align: center;
 
   .confirm-modal-icon {
     width: 60px;
     font-size: 60px;
-    color: gray;
+    color: $gray-font;
   }
 
   .confirm-modal-title {
@@ -13,5 +15,9 @@
 
   .confirm-modal-msg {
     font-size: 15px;
+
+    .name-bold {
+      font-weight: bold;
+    }
   }
 }

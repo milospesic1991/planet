@@ -1,4 +1,5 @@
-@import "../../../../assets/scss/mixins";
+@import "src/assets/scss/mixins";
+@import "src/assets/scss/variables";
 
 .modal-wrapper {
   .form-container {
@@ -8,8 +9,25 @@
       @include flexbox(space-between, center);
       margin-bottom: 10px;
 
+      .img-size {
+        height: 5vh;
+      }
+
+      .photo-field {
+        padding-left: 5px;
+      }
+
+      .input-upload {
+        display: none;
+      }
+
       .browse-btn {
-        @include button(100px, #949697, white, #585858);
+        @include button(
+          $btn-width,
+          $browse-btn,
+          $white-primary,
+          $browse-btn-hover
+        );
       }
     }
 

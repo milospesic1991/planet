@@ -14,6 +14,7 @@ export class ModalComponent implements OnInit {
   planetForm: FormGroup;
   planet: Planet;
   imageUrl: string;
+  imageUploaded: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -27,6 +28,7 @@ export class ModalComponent implements OnInit {
     this.createForm();
     if (!!this.planet) {
       this.planetForm.patchValue(this.planet);
+      this.imageUploaded = true;
     }
   }
 
@@ -59,6 +61,7 @@ export class ModalComponent implements OnInit {
   }
 
   onBrowse = (event) => {
+    this.imageUploaded = true;
     const file = (event.target as HTMLInputElement).files[0];
     let reader = new FileReader();
     this.imageUrl = file.name;
@@ -76,7 +79,7 @@ export class ModalComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.width = '400px';
     dialogConfig.data = {
-      title: 'Confrim ' + title,
+      title: 'Confirm ' + title,
       message: "Are you sure you want to " + message,
       planet: planet
     }

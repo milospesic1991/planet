@@ -3,7 +3,7 @@
 
 .header-wrapper {
   @include flexbox(space-between, center);
-  background-color: $white-background;
+  background-color: $white-primary;
   padding: 1.8rem 1.4rem;
   position: fixed;
   width: 100%;
@@ -39,7 +39,7 @@
 
     .create-btn {
       margin-right: 2rem;
-      @include button(100px, #4c396f, #fff, #2e1f4b);
+      @include button($btn-width, $create-btn, #fff, $create-btn-hover);
     }
   }
 }
